@@ -1,7 +1,23 @@
-
+const targetUrl = "";
 
 function archiveClick(){
     event.preventDefault();
+    FirstLevel = true;
+    if(document.getElementById("Full").checked){
+        FirstLevel = false;
+    }
+
+    archiveUrl = document.getElementById('webUrl').value;
+    data = "archiveUrl=" + archiveUrl + "&" + "FirstLevel=" + FirstLevel.toString();
+    const http = new XMLHttpRequest();
+    http.open("POST", data, targetUrl);
+    http.onreadystatechange = function() {//Call a function when the state changes.
+        if(http.readyState == 4 && http.status == 200) {
+            alert(http.responseText);
+        }
+    }
+    http.send();
+
     alert(document.getElementById("webUrl").value);
 }
 
