@@ -6,13 +6,17 @@ function archiveClick(){
     if(document.getElementById("Full").checked){
         FirstLevel = false;
     }
-    var data = {
-        webToArchive = document.getElementById('webUrl').value,
-        firstLevel = FirstLevel
+
+    archiveUrl = document.getElementById('webUrl').value;
+    data = "archiveUrl=" + archiveUrl + "&" + "FirstLevel=" + FirstLevel.toString();
+    const http = new XMLHttpRequest();
+    http.open("POST", data, targetUrl);
+    http.onreadystatechange = function() {//Call a function when the state changes.
+        if(http.readyState == 4 && http.status == 200) {
+            alert(http.responseText);
+        }
     }
-    $.post(targetUrl, data, function(data, status){
-        console.log(`Data: ${data} status:${status}`);
-    });
+    http.send();
 
     alert(document.getElementById("webUrl").value);
 }
