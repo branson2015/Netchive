@@ -1,7 +1,19 @@
-
+const targetUrl = "";
 
 function archiveClick(){
     event.preventDefault();
+    FirstLevel = true;
+    if(document.getElementById("Full").checked){
+        FirstLevel = false;
+    }
+    var data = {
+        webToArchive = document.getElementById('webUrl').value,
+        firstLevel = FirstLevel
+    }
+    $.post(targetUrl, data, function(data, status){
+        console.log(`Data: ${data} status:${status}`);
+    });
+
     alert(document.getElementById("webUrl").value);
 }
 
