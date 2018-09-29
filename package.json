@@ -1,0 +1,22 @@
+{
+  "name": "netchive",
+  "version": "1.0.0",
+  "description": "volhack3 proj",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/branson2015/Volhack3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/branson2015/Volhack3/issues"
+  },
+  "homepage": "https://github.com/branson2015/Volhack3#readme",
+  "dependencies": {
+    "website-scraper": "^3.3.7"
+  }
+}
