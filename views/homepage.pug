@@ -1,12 +1,14 @@
 mixin traverse(root)
-  ul= root.directory
-  each directory in root
-    li
-      if directory.files.length != 0
-        //ul= directory.directory
-        +traverse(directory.files)
-      else
-        p= directory.directory
+  li
+    p= root.name
+      each directory in root.files
+        ul
+          if directory.files
+            +traverse(directory)
+          else
+            li
+              p= directory.name
+
 
 
 doctype html  
@@ -17,5 +19,16 @@ html(lang='en')
     |console.log(!{JSON.stringify(directories)})
  body  
 
-  +traverse(directories)
+  form(action='/', method='POST')
+    div.form-group 
+      label(for='add') Add
+      input.form-control(type='text', id='add', name='add', placeholder='URL:')
+    div.form-group
+      label(for='r') Recursively
+      input.form-control(type='checkbox', id='r', name='r')
+    div.form-group
+      label(for='submit')
+      input.form-control(type='submit', id='submit', name='submit')
+  ul
+    +traverse(directories)
 
