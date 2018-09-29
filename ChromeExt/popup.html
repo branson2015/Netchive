@@ -19,13 +19,17 @@
     </head>
     <body>
           <form id="form">
-            <input type="submit" name="archiveCurrent" value="Archive this page"><br>
-            <p style="font-size:14px"><strong>Website to archive:</strong></p>
-            <input type="text" name="Website" id="webUrl"><br>
-            Recursion Level:<br>
-            <input type="radio" name="recursionLevel" value="Full"> Full
-            <input type="radio" name="recursionLevel" value="First Level"> First Level<br>
-            <input type="submit" name="archiveUrl" id="archive" value="Achive">
+            <div>
+                <label for="webUrl"><font size="4"><strong>Website to archive:</strong></font></label>
+                <input type="text" name="WebsiteUrl" id="webUrl"><br>
+            </div>
+            <div>
+                <input type="radio" name="recursionLevel" id="Full"> Full
+                <input type="radio" name="recursionLevel" id="FirstLevel" checked="checked"> First Level
+            </div>
+            <div>
+                <button id = "archive">Archive</button>
+            </div>
           </form>
     </body>
 </html>
