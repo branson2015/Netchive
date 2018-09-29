@@ -1,4 +1,4 @@
-const targetUrl = "";
+const targetUrl = "http://localhost:3000/";
 
 function archiveClick(){
     event.preventDefault();
