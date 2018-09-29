@@ -1,9 +1,21 @@
+mixin traverse(root)
+  ul= root.directory
+  each directory in root
+    li
+      if directory.files.length != 0
+        //ul= directory.directory
+        +traverse(directory.files)
+      else
+        p= directory.directory
+
+
 doctype html  
 html(lang='en')  
  head
    title= title
-   directories= dlist
- body
-  ul
-    each directory in directories
-      li= directory.directory
+   script
+    |console.log(!{JSON.stringify(directories)})
+ body  
+
+  +traverse(directories)
+

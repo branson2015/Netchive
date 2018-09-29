@@ -21,6 +21,8 @@ router.get('/',function(req, res, next){
 
 function dirsearch(dlist, root){
     let sites = fs.readdirSync(root);
+
+
     for(let i = 0; i < sites.length; i++){
         
         let name = sites[i];
@@ -32,7 +34,7 @@ function dirsearch(dlist, root){
             dirsearch(t, p);
             dlist.push({directory: name, files: t});
         }else{
-            dlist.push(name);
+            dlist.push({directory: name, files: []});
         }
     }
 }
