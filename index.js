@@ -5,10 +5,14 @@ var path = require('path');                                   //directory path m
 //var favicon = require('') //--for favicon, future feature
 var logger = require('morgan');                               //logging server interactions
 var fs = require('fs');                                       //opening filesystem
+//var css = require('bootstrap-css-only');
 var app = express();                                          //main express instance
 
 app.set('env', 'dev');													              //set app to development/production
 app.set('private', path.join(__dirname, 'private'));					//set private directory
+app.set('archive', path.join(__dirname, 'archive'));					//set private directory
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
 
 var crud = require(path.join(app.get('private'), '/javascript/crud'));
 
@@ -35,5 +39,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.send(err.status + ': ' + err.message);
 });
+
+const port = 3000;
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 module.exports = app;
