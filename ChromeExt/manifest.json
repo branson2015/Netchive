@@ -1,0 +1,18 @@
+{
+    "name": "Netchive",
+    "version": "1.0",
+    "description": "Chrome Extension for Netchive",
+    "manifest_version": 2,
+    "icons": { "128":"Images/Netchive_Icon.png" },
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "permissions": ["storage"],
+    "browser_action":{
+      "default_icon":{"128":"Images/Netchive_Icon.png" },
+      "default_title": "Netchive",
+      "default_popup":"popup.html"
+    }
+  }
+  
