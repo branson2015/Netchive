@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/branson2015/Volhack3#readme",
   "dependencies": {
+    "http-errors": "^1.7.1",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.4",
     "website-scraper": "^3.3.7"
   }
 }
