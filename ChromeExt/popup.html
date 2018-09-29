@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Netchive Extension UI</title>
+        <style>
+            body {
+                overflow-x: hidden;
+                font-family: Arial, sans-serif;
+                font-size: 12px;
+            }
+            input#webUrl{
+                width: 360px
+            }
+            input[type=submit] {
+                font-weight: bold; width: auto;
+            }
+        </style>
+        <script src="popup.js"></script>
+    </head>
+    <body>
+          <form id="form">
+            <input type="submit" name="archiveCurrent" value="Archive this page"><br>
+            <p style="font-size:14px"><strong>Website to archive:</strong></p>
+            <input type="text" name="Website" id="webUrl"><br>
+            Recursion Level:<br>
+            <input type="radio" name="recursionLevel" value="Full"> Full
+            <input type="radio" name="recursionLevel" value="First Level"> First Level<br>
+            <input type="submit" name="archiveUrl" id="archive" value="Achive">
+          </form>
+    </body>
+</html>
