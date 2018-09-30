@@ -2,22 +2,21 @@ const targetUrl = "http://localhost:3000/";
 
 function archiveClick(){
     event.preventDefault();
-    FirstLevel = true;
+    let rc = "false";
     if(document.getElementById("Full").checked){
-        FirstLevel = false;
+        rc = "true";
     }
-
     archiveUrl = document.getElementById('webUrl').value;
-    data = "/archiveUrl=" + archiveUrl + "&" + "FirstLevel=" + FirstLevel.toString();
+    let data = "add=" + archiveUrl + "&r=" + rc;
     const http = new XMLHttpRequest();
-    http.open("POST", data, targetUrl);
+    http.open("POST", targetUrl, true);
+    http.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
     http.onreadystatechange = function() {//Call a function when the state changes.
         if(http.readyState == 4 && http.status == 200) {
             alert(http.responseText);
         }
     }
-    http.send();
-
+    http.send(data);
 }
 
 function onPageDetailsReceived(pageDetails) {
