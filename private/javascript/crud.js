@@ -41,7 +41,7 @@ router.post('/', (req, res, next)=>{
 
     //promise method
     scrape(options).then((result)=>{
-        
+        res.redirect('back');
     }).catch((err)=>{
         console.log('error');
     });
