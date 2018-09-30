@@ -18,7 +18,6 @@ function archiveClick(){
     }
     http.send();
 
-    alert(document.getElementById("webUrl").value);
 }
 
 function onPageDetailsReceived(pageDetails) {
