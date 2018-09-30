@@ -8,7 +8,7 @@ function archiveClick(){
     }
 
     archiveUrl = document.getElementById('webUrl').value;
-    data = "archiveUrl=" + archiveUrl + "&" + "FirstLevel=" + FirstLevel.toString();
+    data = "/archiveUrl=" + archiveUrl + "&" + "FirstLevel=" + FirstLevel.toString();
     const http = new XMLHttpRequest();
     http.open("POST", data, targetUrl);
     http.onreadystatechange = function() {//Call a function when the state changes.

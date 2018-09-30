@@ -4,7 +4,7 @@ var router = express.Router();
 //var models = require('./models');
 var path = require('path');
 var fs = require('fs');
-var Url = require('url');
+const {URL} = require('url');
 var scrape = require('website-scraper');                      //website scraping library
 
 
@@ -43,10 +43,8 @@ router.post('/', (req, res, next)=>{
     scrape(options).then((result)=>{
         res.redirect('back');
     }).catch((err)=>{
-        console.log('error');
+        console.log('error:' + err);
     });
-
-    res.redirect('back');
 });
 
 function dirsearch(dlist, root){
