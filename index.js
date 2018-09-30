@@ -5,7 +5,6 @@ var path = require('path');                                   //directory path m
 //var favicon = require('') //--for favicon, future feature
 var logger = require('morgan');                               //logging server interactions
 var fs = require('fs');                                       //opening filesystem
-//var css = require('bootstrap-css-only');
 var app = express();                                          //main express instance
 
 app.set('env', 'dev');													              //set app to development/production
